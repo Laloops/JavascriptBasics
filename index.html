@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //----- strings -----
+
+        var nome = 'comandos básicos Javascript';
+
+        console.log(nome);
+        console.log(nome.length);
+        console.log('comandos'.length);
+        console.log(nome.toUpperCase());
+        console.log(nome.toLowerCase());
+        console.log(nome.indexOf('script'));
+        console.log(nome.indexOf('teste'));
+        console.log(nome.replace('comandos', 'Comandos'));
+        console.log(nome.slice(5,7));
+
+        var CamilaEstudo = '        lista de comandos       ';
+        console.log(CamilaEstudo);
+        console.log(CamilaEstudo.trim());
+
+        var autor = 'Camila';
+        console.log('Este estudo de ' + nome + ' foi criado por ' + autor);
+        //Template strings
+        console.log(`Este estudo de javascript ${CamilaEstudo.trim()} foi criado por ${autor} `);
+
+        // ----- Operadores Matemáticos -----
+
+        console.log(22 + 22 + 22 + 42); //adição
+        console.log(77 - 22 - 33 + 7); //subtração+adição
+        console.log(5 * 5); //multiplicação
+        console.log (77 / 7 ); //divisão
+        console.log(3 ** 3); //exponenciação
+
+        var a = 4;
+        var b = 6;
+        console.log (a + b);
+
+        console.log(10 % 2); //mostra valor que sobra em um cálculo (módulo)
+        console.log(10 % 3);
+        console.log(10 % 4);
+
+        
+        //Incremento
+        var a = 1;
+        a = a + 1;
+        console.log(a);
+
+        a++;
+        console.log(a);
+
+        console.log(a++);
+
+        //Decremento
+
+        console.log(--a);
+
+        // ----- Booleanos -----
+
+        var a = true;
+        console.log(a);
+
+        var b = false;
+        console.log(b);
+
+        console.log('3 < 5', 3 < 5); //true (menor)
+        console.log('3 < 5', 3 < 5); //false (maior)
+        console.log('5 >= 5', 5 >= 5); //true (maior ou igual)
+        console.log('5 >= 6', 5 >= 6); //false (maior ou igual)
+        console.log('5 <= 7', 5 <= 7); //true (menor ou igual)
+        console.log('5 <= 4', 5 <= 4); //false (menor ou igual)
+        console.log('10 != 10', 10 != 10); //false (diferente de)
+        console.log('10 != 5', 10 != 5); //true (diferente de)
+        console.log('10 == 10', 10 == 10); //true (igual a)
+        console.log('5 == 10', 5 == 10); //false (igual a)
+
+        var nome1 = 'Camila';
+        var nome2 = 'Lopes';
+
+        console.log(nome1 == nome2); 
+        console.log(nome1 != nome2);
+
+        console.log('3 === 3', 3 === 3); //true (Compara se o valor e o tipo são iguais)
+        console.log('3' === 3); //false (primeiro 3 é string, o segundo é numero)
+
+        // ----- Operadores Lógicos -----
+        
+        var a = true;
+        var b = false;
+
+        console.log(!a); //false (sinal de negação)
+        console.log(!!b); //false (sinal de dupla negação)
+
+        // null, undefined, '', false, 0, são considerados valores falsos
+
+        console.log(!!null); //false
+        console.log(!!undefined) //false
+        console.log(!!''); //false
+
+        console.log(!'texto'); //false
+        console.log(!!'texto'); //true
+        console.log(!!20); //true
+
+        console.log(10 && 'texto' && 'programador'); //operador and (se todas as expressões forem verdadeiras, retorna a última delas)
+        console.log(null && 'Laloops'); //operador AND (se houver alguma valor falso, a expressão inteira será invalidada e retorna o primeiro valor FALSO encontrado)
+        console.log(10 > 5 && 7 < 10); //operador AND (true);
+        console.log(10 > 5 && 12 < 10); //operador AND (false);
+
+        console.log(null || 'Laloops'); //operador OU (sempre retorna o primeiro valor VERDADEIRO da expressão)
+        console.log(null || 'Laloops', 30); //operador OU (sempre retorna o primeiro valor VERDADEIRO da expressão)
+        console.log(null || '' || 30); //operador OU (sempre retorna o primeiro valor VERDADEIRO da expressão)
+        console.log(null || false || 0); //operador OU (sempre retorna o primeiro valor VERDADEIRO da expressão, quando for FALSO, retorna o ultimo valor falso)
+        console.log('Laloops' && 30 || '' && 77); //(AND é mais forte que OU) 
+
+        // -----  Condicionais -----
+
+        if (true) {
+            console.log('Hello world!');
+        } //se for true, valor será printado
+
+        if (false) {
+            console.log('Não vai ser');
+        }//se for false, não sera printado
+
+        if (3 > 4) {
+            console.log('3 > 4');
+        }
+
+        if (3 <= 4) {
+            console.log('3 <= 4');
+        }
+
+        var textoVazio = '';
+        if (textoVazio) {
+            console.log('textoVazio');
+        }
+
+        if (!!textoVazio) {
+            console.log('oi');
+        } else {
+            console.log('olá!');
+        }
+
+        if (10 > 20) {
+            console.log('10 > 20');
+        } else if (10 <= 12) {
+            console.log ('10 <= 12');
+        } else {
+            console.log('Laloops');
+        }
+
+        // Operadores ternários
+
+        console.log(true ? 'Laloops' : 'Programadora');
+        console.log(false ? 'Laloops' : 'Programadora');
+
+        var idade = 30;
+        console.log(idade >= 18 ? 'Maior de idade' : 'Menor de idade');
+
+        // Switch case (busca uma string até dar match, quando consegue encontrar o que procura, executa a função e em seguida da o break. Caso não encontre, executa o default)
+
+        var cor = 'amarelo';
+        switch(cor) {
+            case 'azul':
+                console.log('Cor azul');
+                break;
+        
+
+        case 'amarelo':
+            console.log('Cor amarelo');
+            break;
+
+
+        case 'verde':
+            console.log('Cor Verde');
+            break;
+        }
+
+        switch(cor) {
+            case 'rosa':
+                console.log('Cor Rosa');
+                break;
+        
+
+        case 'roxo':
+            console.log('Cor Roxo');
+            break;
+
+
+        case 'verde':
+            console.log('Cor verde');
+            break;
+
+        default:
+            console.log('Cor púrpura');
+            break;
+        }
+
+        switch(cor) {
+            case 'vermelho':
+            case 'amarelo':
+            case 'laranja':
+                console.log('Cor quente!');
+                break;
+
+            case 'verde':
+            case 'azul':
+            case 'roxo':
+                console.log('Cor fria!');
+                break;
+
+            default:
+                console.log('Não identificado');
+                break;
+        }
+
+        // ----- Array -----
+
+        var numeros = [1, 3, 5, 7, 9, 11, 13];
+        console.log(numeros);
+        console.log(numeros[4]);
+        console.log(numeros[0]);
+        console.log(numeros.length);
+
+        var numeroRetornado = numeros.pop(); //remove o ultimo valor do array e retorna o mesmo no console
+        console.log('numeroRetornado', numeroRetornado);
+
+        console.log(numeros.slice(0, 5));
+        console.log(numeros.join('--'));
+
+        var usuario = [
+            'Camila',
+            30,
+            'Codeset',
+            2019,
+            'Brasileira'
+        ];
+
+        console.log(usuario);
+
+        usuario.push('SC');
+        console.log(usuario);
+        console.log(usuario.includes('Codeset'));
+        console.log(usuario.includes('Google'));
+        console.log(usuario.indexOf(2019));
+        console.log(usuario.indexOf('Canadense'));
+
+        var arr1 = [7, 7, 7];
+        var arr2 = ['Camila', 'Lopes', 'Soares'];
+        // [7, 7, 7, 'Camila', 'Lopes', 'Soares']
+
+        var resultado = arr1.concat(arr2);
+        console.log(resultado);
+
+        var resultado = arr1.concat(arr2).concat(['teste', 'alô', 'testando']);
+        console.log(resultado);
+
+        var resultado = arr2.concat(arr1, ['teste2]', 'fulano', 'cicrano']);
+        console.log(resultado);
+
+        //Forma mais simples de concat
+
+        console.log([arr1, arr2]);
+        console.log([...arr1, ...arr2, ...['testeteste', 'testetesteteste']]); //com spread (uso de três pontos)
+
+        console.log(usuario);
+
+        var nome = usuario[0];
+
+        var idade = usuario[1];
+
+        var ano = usuario[3];
+
+        console.log(nome, idade, ano);
+
+        //só é array quando os colchetes estão do lado direito do sinal de igual
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+        
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
